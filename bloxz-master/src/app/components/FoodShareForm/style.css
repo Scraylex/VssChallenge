@@ -1,0 +1,28 @@
+.foodShare-form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  width: 100%;
+  display: flex;
+}
+
+.foodShare-form .form-control {
+  padding: 7px 0;
+}
+
+.foodShare-form .button {
+  margin-top: 10px;
+}
+
+.text-area {
+  width: 100%;
+}
+
+.photo-btn {
+  padding: 5px;
+}
+
+.foodShare-form__buttons {
+  display: flex;
+  justify-content: end;
+}

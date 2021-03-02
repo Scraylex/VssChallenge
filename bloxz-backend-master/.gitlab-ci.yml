@@ -1,0 +1,20 @@
+image: mcr.microsoft.com/dotnet/core/sdk:3.1
+
+stages:
+  - test
+  - build
+
+test:
+  stage: test
+  script:
+    - dotnet test BloxzApi.Tests /p:CollectCoverage=true /p:Threshold=75
+
+  coverage: '/Total.*?(\d+\.\d+?)%/'
+
+build:
+  stage: build
+  script:
+    - dotnet publish bloxz-backend.sln -o build/
+  artifacts:
+    paths:
+      - build/

@@ -1,0 +1,21 @@
+.flex-container {
+  display: flex;
+}
+
+.flex-item {
+  flex: 1 1 auto;
+  align-self: center;
+}
+
+.icon {
+  border-radius: 50%;
+  align-self: center;
+  height: 48px;
+  width: 48px;
+  margin-left: 16px;
+}
+
+.icon p {
+  text-align: center;
+  font-size: 2.5em;
+}

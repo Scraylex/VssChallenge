@@ -1,0 +1,12 @@
+.form-control .input-textarea {
+  background: var(--ion-color-background-card);
+  height: 80px;
+  box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.25);
+  border: 0;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.error .input-textarea {
+  border: 2px solid var(--ion-color-warning);
+}

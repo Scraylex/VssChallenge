@@ -1,0 +1,7 @@
+ion-content {
+  --page-padding: 8px;
+  --padding-top: var(--page-padding);
+  --padding-bottom: var(--page-padding);
+  --padding-start: var(--page-padding);
+  --padding-end: var(--page-padding);
+}

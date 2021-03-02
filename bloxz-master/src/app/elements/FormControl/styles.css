@@ -1,0 +1,15 @@
+.form-control {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.error-message {
+  color: var(--ion-color-warning);
+  margin: 10px 5px;
+  display: none;
+}
+
+.error .display {
+  display: block;
+}

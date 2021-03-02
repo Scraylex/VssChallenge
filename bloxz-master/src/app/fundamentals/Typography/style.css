@@ -1,0 +1,19 @@
+.text {
+  color: var(--ion-color-dark);
+}
+
+.caption {
+  font-family: var(--ion-font-family);
+  font-size: 12pt;
+}
+
+.h1 {
+  font-family: var(--ion-font-family);
+  font-weight: bold;
+  font-size: 48pt;
+  letter-spacing: -1.5px;
+}
+
+.contrast {
+  color: var(--ion-color-dark-contrast);
+}
