@@ -1,5 +1,5 @@
-FROM node:13.8.0
-WORKDIR /bloxz
+FROM node:latest
+WORKDIR /app
 COPY package* ./
 RUN npm install
 COPY . ./
