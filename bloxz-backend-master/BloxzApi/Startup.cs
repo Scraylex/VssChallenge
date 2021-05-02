@@ -22,7 +22,7 @@ namespace BloxzApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<BloxzContext>(options =>
-                options.UseSqlite(Configuration.GetConnectionString("BloxzContext")));
+                options.UseNpgsql(Configuration.GetConnectionString("BloxzContext")));
 
             services.AddCors(options =>
                 {
