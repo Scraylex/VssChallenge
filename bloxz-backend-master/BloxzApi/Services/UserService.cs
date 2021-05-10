@@ -70,11 +70,6 @@ namespace BloxzApi
         public async Task<User> FindByEmailAsync(string email)
         {
             var entity = await _context.Users.FirstOrDefaultAsync(data => data.Email.Equals(email));
-            if (entity == null)
-            {
-                throw new EntityNotFoundException();
-            }
-
             return entity;
         }
 
