@@ -11,6 +11,8 @@ const routes = {
   FOODSHARE_DETAILS: '/foodshare/:id',
   FOODSHARE_EDIT: '/foodshare/:id/edit',
 
+  LOGIN: '/login',
+
   NOT_FOUND: '/',
 }
 

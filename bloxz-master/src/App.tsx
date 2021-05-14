@@ -19,6 +19,7 @@ import {
   EventAddPage,
   EventsPage,
   FoodSharePage,
+  UserLoginPage
 } from './app/pages'
 import routes from './router/constants'
 import { BASE_URL, requestHostInterceptor } from './shared/utils/api'
@@ -57,7 +58,9 @@ const App: React.FC = () => {
           <IonTabs>
             {/* Router */}
             <IonRouterOutlet>
-              <Route path={routes.PINBOARD} component={PinboardPage} />
+              <Route path={routes.LOGIN} component={UserLoginPage} />
+
+              <Route exact path={routes.PINBOARD} component={PinboardPage} />
 
               <Route exact path={routes.EVENTS} component={EventsPage} />
               <Route exact path={routes.EVENT_ADD} component={EventAddPage} />
@@ -88,7 +91,7 @@ const App: React.FC = () => {
               </IonTabButton>
             </IonTabBar>
           </IonTabs>
-          {!isLoggedIn && <UserSelection />}
+          {/*!isLoggedIn && <UserSelection />*/}
         </IonReactRouter>
       </ClientContextProvider>
     </IonApp>

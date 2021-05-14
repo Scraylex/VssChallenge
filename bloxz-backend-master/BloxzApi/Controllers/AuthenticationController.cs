@@ -28,8 +28,7 @@ namespace BloxzApi.Controllers
             _jwtConfig = optionsMonitor.CurrentValue;
         }
 
-        [HttpPost]
-        [Route("Register")]
+        [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] UserRegistrationDto user)
         {
             var existingUser = await _userService.FindByEmailAsync(user.Email);
