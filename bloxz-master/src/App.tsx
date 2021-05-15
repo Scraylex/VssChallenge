@@ -5,7 +5,6 @@ import { IonReactRouter } from '@ionic/react-router'
 import { createClient, ClientContextProvider } from 'react-fetching-library'
 import { calendarOutline, homeOutline, pizzaOutline } from 'ionicons/icons'
 
-import UserSelection from 'app/modules/UserSelection'
 import { getItem } from 'shared/localStorage'
 import { User } from 'shared/api/types'
 import FoodShareModifyPage from 'app/pages/FoodShareModifyPage'
@@ -19,7 +18,6 @@ import {
   EventAddPage,
   EventsPage,
   FoodSharePage,
-  UserLoginPage
 } from './app/pages'
 import routes from './router/constants'
 import { BASE_URL, requestHostInterceptor } from './shared/utils/api'
@@ -44,21 +42,12 @@ import '@ionic/react/css/display.css'
 import './app/fundamentals/Color/style.css'
 import Login from './app/components/Login/Login'
 import useToken from './app/components/Login/useToken'
+import UserSelection from 'app/modules/UserSelection/'
 
 // Creates the REST API Client to be able to use hooks for quering
 const client = createClient({
   requestInterceptors: [requestHostInterceptor(BASE_URL)],
 })
-
-function setToken(userToken: any) {
-  sessionStorage.setItem('token', JSON.stringify(userToken));
-}
-
-function getToken() {
-  const tokenString: any = sessionStorage.getItem('token');
-  const userToken = JSON.parse(tokenString);
-  return userToken?.token
-}
 
 const App: React.FC = () => {
   const { token, setToken } = useToken();
@@ -107,7 +96,7 @@ const App: React.FC = () => {
               </IonTabButton>
             </IonTabBar>
           </IonTabs>
-          {/*!isLoggedIn && <UserSelection />*/}
+          {!isLoggedIn && <UserSelection />}
         </IonReactRouter>
       </ClientContextProvider>
     </IonApp>

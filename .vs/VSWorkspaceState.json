@@ -1,8 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\bloxz-backend-master"
+    "\\bloxz-master",
+    "\\bloxz-master\\src",
+    "\\bloxz-master\\src\\app",
+    "\\bloxz-master\\src\\app\\components",
+    "\\bloxz-master\\src\\app\\components\\Login",
+    "\\bloxz-master\\src\\app\\components\\UserLoginForm",
+    "\\bloxz-master\\src\\app\\pages",
+    "\\bloxz-master\\src\\app\\pages\\UserLoginPage",
+    "\\bloxz-master\\src\\shared",
+    "\\bloxz-master\\src\\shared\\utils"
   ],
-  "SelectedNode": "\\bloxz-backend-master\\bloxz-backend.sln",
+  "SelectedNode": "\\bloxz-master\\src\\app\\components\\Login\\Login.jsx",
   "PreviewInSolutionExplorer": false
 }

@@ -6,5 +6,6 @@ export const requestHostInterceptor = (host: string) => () => async (action: Act
   return {
     ...action,
     endpoint: `${host}${action.endpoint}`,
+    Headers: {'Authorization': `Bearer ${localStorage.getItem('token')}`}
   }
 }

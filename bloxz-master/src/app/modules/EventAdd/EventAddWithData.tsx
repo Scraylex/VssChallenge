@@ -34,12 +34,11 @@ const EventAddWithProps = ({ defaultValues }: EventAddWithDataProps) => {
     initialValues: defaultValues,
     validationSchema: EventAddSchema,
     onSubmit: async values => {
-      const { error: mutationError } = await mutate({ ...values, organiserId: getItem<User>('user')?.id })
-      if (mutationError) {
-        setError(true)
-      } else {
-        history.push(routes.EVENTS)
-      }
+      const resp = await mutate({ ...values, organiserId: getItem<User>('user')?.id })
+      console.log(resp)
+
+      history.push(routes.EVENTS)
+      
     },
   })
 
