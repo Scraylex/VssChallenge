@@ -66,5 +66,16 @@ namespace BloxzApi
             await this._context.SaveChangesAsync();
             return entity;
         }
+
+        public async Task<User> FindByEmailAsync(string email)
+        {
+            var entity = await _context.Users.FirstOrDefaultAsync(data => data.Email.Equals(email));
+            return entity;
+        }
+
+        public async Task<bool> CheckPasswordAsync(User existingUser, string password)
+        {
+            return existingUser.Password.Equals(password);
+        }
     }
 }

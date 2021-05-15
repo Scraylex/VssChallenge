@@ -4,12 +4,14 @@ using System.Threading.Tasks;
 using BloxzApi.Exceptions;
 using BloxzApi.Models;
 using BloxzApi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BloxzApi
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class FoodsharesController : ControllerBase
     {

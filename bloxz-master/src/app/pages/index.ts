@@ -8,6 +8,7 @@ import FoodShareAddPage from './FoodShareAddPage'
 import FoodShareModifyPage from './FoodShareModifyPage'
 import NotFoundPage from './NotFoundPage/NotFoundPage'
 import PinboardPage from './PinboardPage/PinboardPage'
+import UserLoginPage from './UserLoginPage/UserLoginPage'
 
 export {
   PinboardPage,
@@ -20,4 +21,5 @@ export {
   EventsPage,
   FoodSharePage,
   NotFoundPage,
+  UserLoginPage,
 }
