@@ -13,7 +13,7 @@ type UserLoginFormProps = {
   redirectURL: string
 }
 
-const UserLoginForm = ({ formik, logOut, redirectURL }: UserLoginFormProps) => {
+const UserLoginForm = ({ formik, logOut }: UserLoginFormProps) => {
   const history = useHistory()
   const formButtons = () => {
     if (!logOut) {
@@ -22,7 +22,6 @@ const UserLoginForm = ({ formik, logOut, redirectURL }: UserLoginFormProps) => {
           color="secondary"
           onClick={() => {
             formik.handleSubmit()
-            history.replace(redirectURL)
             window.location.reload(false)
           }}
         >
@@ -40,7 +39,6 @@ const UserLoginForm = ({ formik, logOut, redirectURL }: UserLoginFormProps) => {
           color="secondary"
           onClick={() => {
             formik.handleSubmit()
-            history.replace(redirectURL)
             window.location.reload(false)
           }}
         >

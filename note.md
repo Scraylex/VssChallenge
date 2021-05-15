@@ -2,6 +2,6 @@
 
 ```bash
 
-docker run --name postgres -p 5432 -e POSTGRES_PASSWORD=root -e POSTGRES_DB=bloxz -d postgres
+docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=root -e POSTGRES_DB=bloxz -d postgres
 
 ```

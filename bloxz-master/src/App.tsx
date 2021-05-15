@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import { IonApp, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react'
 import { IonReactRouter } from '@ionic/react-router'
@@ -42,13 +42,30 @@ import '@ionic/react/css/display.css'
 
 /* Own CSS */
 import './app/fundamentals/Color/style.css'
+import Login from './app/components/Login/Login'
+import useToken from './app/components/Login/useToken'
 
 // Creates the REST API Client to be able to use hooks for quering
 const client = createClient({
   requestInterceptors: [requestHostInterceptor(BASE_URL)],
 })
 
+function setToken(userToken: any) {
+  sessionStorage.setItem('token', JSON.stringify(userToken));
+}
+
+function getToken() {
+  const tokenString: any = sessionStorage.getItem('token');
+  const userToken = JSON.parse(tokenString);
+  return userToken?.token
+}
+
 const App: React.FC = () => {
+  const { token, setToken } = useToken();
+
+  if (!token) {
+    return <Login setToken={setToken} />
+  }
   const isLoggedIn = !!getItem<User>('user')
 
   return (
@@ -58,7 +75,6 @@ const App: React.FC = () => {
           <IonTabs>
             {/* Router */}
             <IonRouterOutlet>
-              <Route path={routes.LOGIN} component={UserLoginPage} />
 
               <Route exact path={routes.PINBOARD} component={PinboardPage} />
 
