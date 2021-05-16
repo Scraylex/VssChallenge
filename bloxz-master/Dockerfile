@@ -1,6 +1,6 @@
-FROM node:latest
-WORKDIR /app
-COPY package* ./
-RUN npm install
-COPY . ./
-ENTRYPOINT [ "npm","start" ]
+
+FROM nginx:latest
+COPY ./build /var/www
+COPY nginx.conf /etc/nginx/nginx.conf
+EXPOSE 80
+ENTRYPOINT ["nginx","-g","daemon off;"]

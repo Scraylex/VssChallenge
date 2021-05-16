@@ -1,0 +1,24 @@
+version: "3.7"
+
+volumes:
+  db-data:
+
+services:
+
+  backend:
+    build:
+      context: ./bloxz-backend-master/
+    image: bloxz-api:compose
+    depends_on:
+      - db
+    ports:
+      - "5001:80"     
+      
+  db:
+    image: postgres:10.10
+    environment:
+          POSTGRES_USER: "postgres"
+          POSTGRES_PASSWORD: "root"
+          POSTGRES_DB: "bloxz"
+    volumes:
+      - db-data:/var/lib/postgresql/data

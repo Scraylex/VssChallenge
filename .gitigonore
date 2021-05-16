@@ -1,0 +1,10 @@
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+build/
+
+# Jetbrains Rider
+.idea/
+
+# Visual Studio Code
+.vscode/
+
