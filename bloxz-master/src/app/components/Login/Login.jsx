@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import routes from 'router/constants'
+
 
 import './Login.css';
 import { BASE_URL } from '../../../shared/utils/api';
+import { Redirect } from 'react-router';
 
 async function loginUser(credentials) {
   return fetch(`${BASE_URL}/authentication/register`, {
@@ -21,6 +24,7 @@ export default function Login({ setToken }) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = await loginUser({
@@ -29,7 +33,11 @@ export default function Login({ setToken }) {
       email,
       password
     });
-    setToken(token);
+
+    setToken(token['token']);
+
+    window.location.reload()
+
   }
 
   return (
@@ -54,7 +62,7 @@ export default function Login({ setToken }) {
           <input type="password" onChange={e => setPassword(e.target.value)}/>
       </label>
       <div>
-        <button type="submit">Submit</button>
+        <button type="submit"> Submit</button>
       </div>
       </form>
     </div>

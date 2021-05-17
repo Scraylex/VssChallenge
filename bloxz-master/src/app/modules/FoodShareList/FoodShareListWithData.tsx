@@ -10,6 +10,8 @@ export const FoodShareListWithData = () => {
     method: 'GET',
     endpoint: '/foodshares',
     responseType: 'json',
+    headers: {'Authorization': `Bearer ${localStorage.getItem('token')?.slice(1, -1)}`}
+
   })
 
   if (loading) {

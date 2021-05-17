@@ -1,0 +1,44 @@
+version: "3.9"
+
+volumes:
+  db-data:
+
+services:
+    app1:
+        build:
+            context: ./bloxz-master
+        ports:
+            - "3001:80"
+    
+    app2:
+        build:
+            context: ./bloxz-master
+        ports:
+            - "3002:80"
+    
+    nginx:
+        build:
+            context: ./Loadbalancer
+        ports:
+            - "8080:80"
+        depends_on:
+            - app1
+            - app2
+            - backend    
+
+    backend:
+        build:
+            context: ./bloxz-backend-master
+        depends_on:
+            - db
+        ports:
+            - "8000:80"  
+      
+    db:
+        image: postgres:10.10
+        environment:
+            POSTGRES_USER: "postgres"
+            POSTGRES_PASSWORD: "root"
+            POSTGRES_DB: "bloxz"
+        volumes:
+            - db-data:/var/lib/postgresql/data
