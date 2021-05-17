@@ -1,5 +1,8 @@
 version: "3.9"
 
+volumes:
+  data:
+
 services:
     app1:
         build:
@@ -33,10 +36,11 @@ services:
       
     db:
         image: postgres:13-alpine
+        ports:
+            - "5432:5432" 
         environment:
             POSTGRES_USER: "postgres"
             POSTGRES_PASSWORD: "root"
             POSTGRES_DB: "bloxz"
         volumes:
-            - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-
+            - data:/var/lib/postgresql/data
