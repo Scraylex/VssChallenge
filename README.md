@@ -4,7 +4,7 @@ To run this project just navigate to the project containing directory and use `d
 
 You can visit `http://localhost:8080/` to see the frontend.
 
-If you want to see the frontend with test-data insert the data.sql via pgadmin4 or psql into the postgres database on :5432
+If you want to see the frontend with test-data insert the data.sql via pgadmin4 or psql into the database
 
 # License
 
