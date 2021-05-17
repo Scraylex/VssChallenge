@@ -31,6 +31,8 @@ const FoodShareModifyWithProps = ({ defaultValues }: FoodShareModifyWithDataProp
       method: 'PUT',
       endpoint: `/foodshares/${defaultValues.id}`,
       body: formValues,
+      headers: {'Authorization': `Bearer ${localStorage.getItem('token')?.slice(1, -1)}`}
+
     }
   }
   const { mutate } = useMutation(modifyFoodShareAction)

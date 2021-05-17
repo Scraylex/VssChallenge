@@ -5,11 +5,13 @@ import dateFormatter from 'shared/utils/dateFormatter'
 import EventList from './EventList'
 import eventDateArranger from './eventDateArranger'
 
+
 export const EventListWithData = () => {
   const { loading, payload, error } = useQuery<Event[]>({
     method: 'GET',
     endpoint: '/events',
     responseType: 'json',
+    headers: {'Authorization': `Bearer ${localStorage.getItem('token')?.slice(1, -1)}`}
   })
 
   if (loading) {

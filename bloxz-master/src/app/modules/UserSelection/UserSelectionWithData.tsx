@@ -15,6 +15,7 @@ const UserSelectionWithData = () => {
     method: 'GET',
     endpoint: '/users',
     responseType: 'json',
+    headers: {'Authorization': `Bearer ${localStorage.getItem('token')?.slice(1, -1)}`}
   })
 
   if (loading) {
